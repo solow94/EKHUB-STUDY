@@ -1,2 +1,2 @@
-# HTML-
-1일차 HTML 공부
+# EKHUB-STUDY
+9월 공부내용
