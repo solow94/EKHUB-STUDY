@@ -1,0 +1,44 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <p>
+        <a href="https://opentutorials.org/course/1">생활코딩</a>
+         : 생활코딩 홈페이지로 이동한다.
+    </p>
+    <p>
+        <a href="https://opentutorials.org/course/1" target="_blank">생활코딩</a>
+         : 새창에서 생활코딩 홈페이지를 연다.
+    </p>
+    <p>
+        <a href="https://opentutorials.org/course/1" target="_self">생활코딩</a>
+         : 현재 프레임에서 생활코딩 홈페이지를 연다. == 기본설정이랑 같음
+    </p>
+    <p>
+        <a href="https://opentutorials.org/course/1" title="생활코딩 홈페이지">생활코딩</a>
+         : 링크에 부가 설명을 추가한다. 링크에 툴팁을 표시한다.
+    </p>
+
+    <br>
+    <p>
+        <a href="https://opentutorials.org/module/3074/18014" title="생활코딩이란 무엇인가 참조">생활코딩</a>
+         : HTML 소개 --> 여기는 href에 https:// 붙히니 파일 위치 안나오고 입력한 주소로 이동됨
+    </p> 
+    <p>
+        <a href="opentutorials.org/course/11/10" title="생활코딩이란 무엇인가 참조">생활코딩</a>
+         : HTML 소개 --> 여기는 href에 https:// 안붙히니까 파일 위치 뒤에 주소 추가됨
+    </p>
+    <br/>
+    <p>Iframe</p>
+    <iframe id="sample" src="http:/w3c.org/" width="100%" heigth="300"></iframe>
+    <a href="https://opentutorials.org/" target="sample">아이프래임</a>
+    아이프래임 클릭시 iframe 안에 있는 사이트가 생활코딩으로 바껴야되는데 창 전체가 바뀜 타겟이 안되는거같음
+</body>
+</html>
