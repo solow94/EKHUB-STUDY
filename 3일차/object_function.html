@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var grades = {'egoing':10, 'eunji':25, 'soribada':80}; //객체
+        var grades2 = {};
+
+        grades2['chickin'] = 15000;
+        grades2['galbi'] = 8000;
+        document.write(grades);
+        document.write(grades['egoing']);
+        document.write(grades2);
+        document.write(grades.egoing);
+
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+
+        for(key in grades2){
+            document.write(key +" "+ grades2[key] + "<br>");
+        }
+
+        var test = {
+            'list' : {'egoing' : 10, 'eunji' : 50, 'sori' : 100},
+            'show' : function(){
+                for(var name in this.list){
+                    console.log(name, this.list[name]);
+                }
+            }
+        }
+        test.show();
+        // document.write(test['show']);
+        
+    </script>
+</head>
+<body>
+    <ol>
+        <script>
+            for(var name in grades){
+            document.write("<li>key : "+name+" value : " +grades[name]+"</li>");
+        }
+        </script>
+    </ol>
+</body>
+</html>
