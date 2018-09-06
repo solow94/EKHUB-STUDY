@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+        function get_members(){
+            return ['egoing', 'eunji', 'soribada'];
+        }
+
+        var member = ['egoing', 'eunji', 'soribada'];
+        alert(member[0]);
+        alert(member[1]);
+        alert(member[2]);
+    
+        // document.write(get_members());
+
+        members = get_members();
+        for(i = 0; i < members.length; i++){
+            document.write(members[i].toUpperCase() + "<br >");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
