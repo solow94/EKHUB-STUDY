@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function home2() {
+            const homename = 'my house';
+            // homename = "your house";
+            console.log(homename);
+        }
+
+        home2();
+
+        function fruit() {
+            const list = ["apple", "orange", "watermelon"];
+            console.log(list.push("banana"));
+        }
+        fruit();
+
+        // immutable array를 어떻게 만들지?
+        const list = ["apple", "orange", "watermelon"];
+        list2 = [].concat(list, "banana");
+        console.log(list2 === list);
+    </script>
+</body>
+
+</html>

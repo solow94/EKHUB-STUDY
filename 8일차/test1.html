@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            function print() {
+                let all_li = document.getElementsByTagName('li');
+                let arr = Array.from(all_li);
+
+                let arr_filter = arr.filter(function (item) {
+                    if (item.innerHTML.includes("e")) {
+                        return true
+                    }
+                });
+                console.log(arr_filter);
+            }
+            print();
+        }
+    </script>
+    <ul>
+        <li>apple</li>
+        <li>orange</li>
+        <li>banana</li>
+        <li>strawberry</li>
+    </ul>
+</body>
+
+</html>

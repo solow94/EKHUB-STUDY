@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        window.onload = function () {
+            var name = "global var";
+
+            function home() {
+                var homevar = "homevar";
+                for (let i = 0; i < 100; i++) {
+                    // console.log(i);
+                }
+
+                if (true) {
+                    let myif = "myif";
+                }
+                // console.log(i); 에러
+                // console.log(myif); 에러
+            }
+            home();
+
+            /*
+                var list = document.querySelectorAll("li");
+                for (var i = 0; i < list.length; i++) {
+            
+                    console.log(i);
+            
+                    list[i].addEventListener("click", function () {
+                        console.log(i + "번째 리스트입니다.");
+                    });
+                }
+            
+                i = 999;
+
+                이렇게 할 경우 다 999번째 리스트라고 뜬다.
+            */
+
+            var list = document.querySelectorAll("li");
+            
+            for (let i = 0; i < list.length; i++) {
+
+                console.log(i);
+
+                list[i].addEventListener("click", function () {
+                    console.log(i + "번째 리스트입니다.");
+                });
+            }
+        }
+
+    </script>
+
+    <ul>
+        <li>javascript</li>
+        <li>java</li>
+        <li>python</li>
+        <li>django</li>
+    </ul>
+</body>
+
+</html>

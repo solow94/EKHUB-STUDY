@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function checkNum(...argArray) {
+            // const argArray = Array.prototype.slice.call(arguments);
+            // const argArray = Array.from(arguments);
+            console.log(toString.call(argArray));
+            const result = argArray.every((v) => typeof v === "number")
+            console.log(result);
+        }
+        const result = checkNum(10, 2, 3, 4, 5, "23");
+    </script>
+</body>
+
+</html>

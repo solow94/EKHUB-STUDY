@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var numbers = [20, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+        document.write(numbers.sort() + "<br>"); //문자열로 비교임
+
+        var sortfunc = function (a, b) {
+            console.log(a,b);
+            
+            // if(a > b){
+            //     return 1;
+            // }else if(a < b){
+            //     return -1;
+            // }else{
+            //     return 0;
+            // }
+
+            return a - b ;
+        }
+        document.write(numbers.sort(sortfunc));
+    </script>
+</body>
+
+</html>

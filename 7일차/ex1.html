@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .js{
+            font-weight: bold;
+            color:red;
+        }
+
+        #first{
+            color:green;
+        }
+
+        span{
+            color:blue;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        document.write('Hello world');
+    </script>
+    <h1>html</h1>
+    hello world
+    <input type="button" value='hi'>
+    <input type="button" value='alert(hi)' onclick="alert('hi')">
+    <input type="text" onchange="alert('changed')" value="changed">
+    <input type="text" onkeydown="alert('key down!')" value="key down">
+
+    <input type="button" value="night" onclick="
+        document.querySelector('body').style.backgroundColor = 'black';
+        document.querySelector('body').style.color = 'white';
+    ">
+    <input type="button" value="day" onclick="
+        document.querySelector('body').style.backgroundColor = 'white';
+        document.querySelector('body').style.color = 'black';
+    ">
+
+    <p>
+        The <span id="first" class="js">tiger</span> (Panthera tigris) is the largest cat species,
+        most recognizable for its pattern of dark vertical stripes on reddish-orange fur with a
+        lighter <span>underside</span>. The species is <span class="js">classified</span> in the genus Panthera with
+        the lion,
+        leopard, jaguar and snow leopard. It is an apex predator, primarily preying
+        on ungulates such as deer and bovids. It is territorial and generally a
+        solitary but social predator, often requiring large contiguous areas of
+        habitat that <span>support</span> its prey requirements. <span class="js">This</span>, coupled with the fact
+        that
+        it is indigenous to some of the more densely populated places on Earth,
+        has caused significant conflicts with humans.</p>
+</body>
+
+</html>

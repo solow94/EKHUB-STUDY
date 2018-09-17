@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>mydiv</p>
+
+    <script>
+        //javascript의 대표적인 콜백함수
+        setTimeout(function () {
+            console.log("나는 javascript의 대표적인 콜백함수!");
+        }, 1000);
+
+
+        //축약형
+        setTimeout(() => {
+            console.log("Arrow Funtion을 이용한 setTimeout!");
+        }, 1000);
+
+        let newArr = [1, 2, 3, 4, 5].map(function (value, index, object) {
+            return value * 2;
+        });
+
+        let newArr2 = [1, 2, 3, 4, 5].map((v) => v * 2);
+        // let newArr2 = [1,2,3,4,5].map( (v) =>  (v * 2)); 뒤에가 반환값
+
+        console.log(newArr, newArr2);
+
+        const myObj = {
+            runTimeout() {
+                setTimeout(function () {
+                    // console.log(this == window);
+                    this.printData();
+                }.bind(this), 200);
+            },
+
+            printData() {
+                console.log('hi codesuad!');
+            }
+        }
+        myObj.runTimeout();
+
+        //Arrow 함수일경우 bind안 써도됨.
+        const myObj2 = {
+            runTimeout() {
+                setTimeout(() => {
+                    // console.log(this == window);
+                    this.printData();
+                }, 200);
+            },
+
+            printData() {
+                console.log('hi codesuad!');
+            }
+        }
+        myObj2.runTimeout();
+
+        const el = document.querySelector("p");
+        el.addEventListener("click", function (evt) {
+            console.log(this);
+        });
+
+        const myObj3 = {
+            register() {
+                el.addEventListener("click", (evt) => {
+                    this.printData(evt.target);
+                });
+            },
+            printData(el) {
+                console.log("clicked!!", el.innerText);
+            }
+        }
+
+        myObj3.register();
+    </script>
+</body>
+
+</html>

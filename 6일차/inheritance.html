@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function Person(name){
+        //     this.name = name;
+        //     this.introduce = function(){
+        //         return 'My name is ' + this.name;
+        //     }
+        // }
+
+        // var p1 = new Person("Eunji");
+        // document.write(p1.introduce + " <br>");
+
+
+        function Person(name) {
+            this.name = name;
+        }
+
+        Person.prototype.name = null;
+        Person.prototype.introduce = function () {
+            return 'My nickname is ' + this.name;
+        }
+
+        function Programmer(name) {
+            this.name = name;
+        }
+
+        Programmer.prototype = new Person(); //객체가 상속 받는 방법
+        Programmer.prototype.coding = function () {
+            return "hello world";
+        }
+
+        function Designer(name) {
+            this.name = name;
+        }
+
+        Designer.prototype = new Person();
+        Designer.prototype.design = function(){
+            return "beautiful!";
+        }
+
+        var p1 = new Programmer("Eunji");
+        document.write(p1.introduce() + " <br>");
+        document.write(p1.coding() + "<br>");
+
+        var p2 = new Designer('bibi');
+        document.write(p2.introduce() + "<br>");
+        document.write(p2.design() + "<br>");
+    </script>
+</body>
+
+</html>

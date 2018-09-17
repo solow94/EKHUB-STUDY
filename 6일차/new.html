@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        객체를 만드는 과정이 분산되어 있기 때문에. 보기 편하게.
+
+        var person = {} //객체 생성 Object
+        
+        person.name = 'egoing';
+        person.introduce = function(){
+            return "My name is " + this.name; //여기서 this는 person객체
+        }
+        */
+
+        function Person(){}
+        var p0 = Person(); // p0는 undefined 아무것도 담겨 있지 않다.
+        var p = new Person(); // Person{} 생성. 비어있는 객체라는 뜻 new라는 걸 붙히고 함수 호출하면 그 함수는 생성자다.
+        //이렇게 생긴 p는 객체 리터럴을 통해서 만든 
+        var pp = {} 
+        //와 같다.
+
+
+        var person1 = {
+            'name': 'egoing',
+            'introduce': function () {
+                return 'My name is ' + this.name;
+            }
+        }
+
+        var person2 = {
+            'name': 'eunji',
+            'introduce': function () {
+                return 'My name is ' + this.name;
+            }
+        }
+
+        //이렇게 객체 2개만들면 중복되는 코드.
+
+        document.write(person.introduce());
+
+        // function Person() {
+        //     var p = new Person();
+
+        //     p.name = 'eunji';
+        //     p.instroduces = function(){
+        //         return 'My name is ' + this.name;
+        //     }
+        // }
+
+
+        //초기화
+        function Person(name){
+            this.name = name;
+            this.introduce = function(){
+                return 'My name is ' + this.name;
+            }
+        }
+
+        var p1 = new Person('egoing');
+        document.write(p1.introduce() + "<br>");
+
+        var p2 = new Person('eunji');
+        document.write(p2.introduce() + "<br>");
+
+    </script>
+</body>
+
+</html>

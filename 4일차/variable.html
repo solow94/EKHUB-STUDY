@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var i = 5;
+        function a(){
+            var i = 10;
+            b();
+        }
+        function b(){
+            document.write(i);
+        }
+        a();
+        /*
+        여기서 i의 값은?
+        */
+
+        var MYAPP = {};
+        MYAPP.caculator = {
+            'left' : null,
+            'right' : null
+        }
+
+        MYAPP.coordinate = {
+            'left' : null,
+            'right' : null
+        }
+
+        MYAPP.caculator.left = 10;
+        MYAPP.caculator.right = 20;
+
+        function sum(){
+            return MYAPP.caculator.left + MYAPP.caculator.right;
+        }
+
+        document.write(sum());
+    </script>
+</body>
+
+</html>

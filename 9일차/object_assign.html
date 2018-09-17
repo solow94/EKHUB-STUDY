@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const healthObj = {
+            showHealth: function () {
+                console.log("오늘 운동 시간 : " + this.healthTime);
+            }
+        }
+
+        // const myHealth = Object.create(healthObj);
+        // myHealth.healthTime = "11:22";
+        // myHealth.name = "crong";
+
+        //객체를 copy해서 새로운 객체를 반환한다.
+        const myHealth = Object.assign(Object.create(healthObj), {
+            name: "crong",
+            lastTime: "11:24"
+        });
+
+        console.log(myHealth);
+
+        const previousObj = {
+            name: "crong",
+            lastTime: "11:20"
+        };
+
+        const myHealth2 = Object.assign({}, previousObj, {
+            "lastTime": "12:30"
+        });
+
+        console.log("myhealth is ", myHealth2);
+    </script>
+</body>
+
+</html>

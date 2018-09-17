@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //참조를 가지고 있는 객체만 저장이 가능하다.
+        let arr = [1,2,3,4];
+        let arr2 = [5,6,7,8];
+        let obj = {arr,arr2};
+        let ws = new WeakSet();
+        ws.add(arr);
+        ws.add(arr2);
+        ws.add(obj);
+        ws.add(function(){});
+        console.log(ws);
+        arr = null;
+        console.log(arr);
+        console.log(ws);
+        console.log(ws.has(arr), ws.has(arr2));
+        // console.log()
+    </script>
+</body>
+</html>

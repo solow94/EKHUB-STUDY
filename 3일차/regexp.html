@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var pattern = /a/;
+        pattern.exec('abcde'); // 출력 ["a"]
+        
+        var pattern = /a./;
+        pattern.exec('abced'); //출력 ["ab""]
+
+        pattern.test('abcde'); //true, false로 나옴 
+
+        var xi = /a/;
+        console.log("Aabcde".match(xi));
+
+        var oi = /a/i;
+        console.log("Aabcde".match(oi));
+
+        var og = /a/g;
+        console.log("abcdea".match(og));
+
+        var ig = /a/ig;
+        console.log("AabcdAaAA".match(ig));
+
+        var pattern = /(\w+)\s(\w+)/;
+        var str = "coding everybody";
+
+        var result = str.replace(pattern, "$2 $1", "test, zz"); // 출력 everybody, coding
+        console.log(result);
+        console.log(str);
+
+        var urlPattern = /\b(?:https?):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*/gim;
+        var content = '생활코딩 : http://opentutorials.org/course/1 입니다. 네이버 : http://naver.com 입니다.';
+        var result = content.replace(urlPattern, function(url){
+            return '<a href="'+url+'">'+url+'</a>';
+        });
+        console.log(content);
+        console.log(result);
+    </script>
+</body>
+</html>

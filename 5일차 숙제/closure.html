@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function outter() {
+            var title = "coding everybody";
+            return function () {
+                alert(title);
+            }
+        }
+
+        //return 했을때 외부함수는 이미 끝났다. 죽었다.
+        //외부함수가 종료 된 이후에도 내부함수를 통해 외부함수에 접근할 수 있다.
+
+        inner = outter();
+        inner();
+
+        function factory_movie(title) {
+            return {
+                get_title: function () {
+                    return title;
+                },
+                set_title: function (_title) {
+                    title = _title
+                }
+            }
+        }
+        
+        ghost = factory_movie('Ghost in the shell');
+        matrix = factory_movie('Matrix');
+
+        alert(ghost.get_title());
+        alert(matrix.get_title());
+
+        ghost.set_title('공각기동대');
+
+        alert(ghost.get_title());
+        alert(matrix.get_title());
+    </script>
+</body>
+
+</html>

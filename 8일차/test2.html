@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const SETTING = {
+            name : "LUCKY LOTTO!",
+            count : 5,
+            maxNumber : 45 
+        }
+
+        function getRandomNumber({count,maxNumber}){
+            //랜덤한 유일한 숫자값을 추출
+
+            let set_result = new Set();
+            while(set_result.size < count){
+                set_result.add(Math.floor(Math.random()*maxNumber)+1);
+            }
+            return console.log(set_result.values());
+        }
+        getRandomNumber(SETTING);
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = "hello world ! ^^ ~~";
+        let matchstr1 = "hello";
+        let matchstr2 = "^^";
+        console.log(str.startsWith(matchstr1)); // 문자열이 이걸로 시작하냐
+        console.log(str.endsWith(matchstr2)); // 문자열이 이걸로 끝나냐
+        console.log("include ",str.includes("world")); // 문자열이 이걸 포함하고 있냐
+    </script>
+</body>
+</html>

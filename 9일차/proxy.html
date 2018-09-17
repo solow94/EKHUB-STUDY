@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const myObj = {name : 'eunji'};
+        // const proxy = new Proxy(객체, {핸들러});
+        const proxy 
+      
+      
+        const myObj = { name: 'crong' };
+        const proxy = new Proxy(myObj, {
+            get: function () {
+
+            },
+            set: function () {
+                console.log('change value');
+            }
+        });
+
+        proxy.name = "codesquead";
+        // 이렇게 하면 값도 바뀌면서 "change value"라고 출력된다.
+
+        proxy.name = "jisu";
+        //mapping한 결과? myObj를 감싸고 있는 또다른 Object
+        //proxy !== myObj; 
+
+
+        const myObj2 = { name: 'crong' };
+        const proxy2 = new Proxy(myObj2, {
+            get: function (target, property, receiver) {
+                console.log('get value');
+                return target[property];
+            },
+            set: function (target, property, value) {
+                console.log('set value');
+                target['changedValue']++;
+                target[propert] = value;
+            }
+        });
+
+    </script>
+</body>
+
+</html>

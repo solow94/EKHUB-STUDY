@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function func() {
+
+        // }
+
+        // function sum(arg1, arg2) {
+        //     return arg1 + arg2;
+        // }
+
+        /* 함수호출방법
+        1. ();
+        2. .apply();
+        3. .call();
+        */
+        // alert(sum(1, 2)); //기본 호출방법
+        // alert(sum.apply(null, [1, 2]));
+
+        o1 = { val1: 1, val2: 2, val3: 3} // sum:sum
+        o2 = { v1: 10, v2: 50, v4: 25}
+        
+        function sum() {
+            // var this = o1; 이런 뜻이다.
+            var _sum = 0;
+            for (name in this) {
+                // if (typeof this[name] !== 'function')
+                
+                    _sum += this[name];
+            }
+            return _sum;
+        }
+
+        // alert(o1.sum());
+        // alert(o2.sum());
+
+        console.log(sum.apply(o1)); // == o1이라는 객체의 sum이라는 메소드 
+        console.log(sum(o1));
+        alert(sum.apply(o2));
+
+
+        var module = {
+            x:42,
+            getX: function(){
+                return this.x;
+            }
+        }
+        
+        this.x = 9;
+        var module = {
+            x : 81,
+            getX: function(){return this.x}
+        };
+
+        console.log(module.getX()); //81
+
+        var retrieveX = module.getX;
+        console.log(retrieveX()); //9
+    </script>
+</body>
+
+</html>

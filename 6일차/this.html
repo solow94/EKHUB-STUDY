@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //함수와 this
+        function func() {
+            if (window === this) {
+                document.write("window === this <br>");
+            }
+        }
+        func();
+
+        //메소드와 this
+        var o = {
+            func: function () {
+                if (o === this) {
+                    document.write("o === this <br>");
+                }
+            }
+        }
+        o.func();
+
+        //생성자와 this
+        var funcThis = null;
+        function Func() {
+            funcThis = this;
+            console.log(this);
+        }
+
+        // console.log(Func());
+
+        //일반 함수로 호출
+        var o1 = Func();
+        if (funcThis === window) {
+            document.write('window < /br>');
+        }
+
+        //생성자로 호출
+        var o2 = new Func();
+        if (funcThis === o2) {
+            document.write('o2 < /br>');
+        }
+
+
+        var o = {}
+        var p = {}
+
+        function func2() {
+            switch (this) {
+                case o:
+                    document.write('o<br>');
+                    break;
+                case p:
+                    document.write('p<br>');
+                case window:
+                    document.write('window<br>');
+                    break;
+            }
+        }
+        func2();
+        func2.apply(o);
+        func2.apply(p);
+    </script>
+</body>
+
+</html>

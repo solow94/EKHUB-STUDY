@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Object.keys() 배열로 index값 가져오기
+        var arr = ["a", "b", "c"];
+        var o = {"name" : "eunji", "age" : 25, "city" : "seoul"};
+        console.log('Object.keys(arr)', Object.keys(arr)); //["0","1","2"]
+        console.log(Object.keys(o)); //["name","age","city"]
+
+        //Object.prototype.toString()
+        var k = new Object();
+        var a = new Array(1,2,3);
+        console.log('k.toString()', k.toString()); //[object Object]
+        console.log('a.toString()', a.toString()); //1,2,3
+
+        Object.prototype.contain = function(needle){
+            for(var name in this){
+                if(this[name] === needle){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        var oo = {'name':'egoing', 'city':'seoul'};
+        console.log(oo.contain('egoing'));
+        var aa = ['egoing', 'leezche', 'grapittie'];
+        console.log(aa.contain('lezche'));
+
+        //Object의  prototype에 손댄 위험
+        for(var name in oo){
+            if(oo.hasOwnProperty(name)){ //name이 oo객체에 직접적으로 정의되있는 기능이냐고 물어보는거임.
+                console.log(name);
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

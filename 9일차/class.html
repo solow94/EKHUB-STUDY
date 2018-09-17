@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Health(name) {
+            this.name = name;
+        }
+
+        Health.prototype.showHealth = function () {
+            console.log(this.name + "님 안녕하세요");
+        }
+
+        const h = new Health("crong");
+        h.showHealth();
+
+        //ES6 Class키워드
+        //함수랑 전혀 다르다. Health2();하면 실행안된다.
+        class Health2 {
+            constructor(name, lastTime) {
+                this.name = name;
+                this.lastTime = lastTime;
+            }
+
+            showHealth() {
+                console.log("안녕하세요. " + this.name + "님");
+            }
+        }
+
+        const myHealth = new Health2("crong");
+        myHealth.showHealth();
+        console.log(myHealth);
+
+    </script>
+</body>
+
+</html>

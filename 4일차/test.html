@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="../3일차/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        #text {
+            font-size: 15px;
+        }
+
+    </style>
+    <script>
+        window.onload = function () {
+            $("#btn_show").click(function () {
+                var english = $('#text').val();
+                en_find(english);
+            });
+
+            //영어 찾기 함수
+            function en_find(english) {
+                var arr_en_word = [];
+                var ptn_english = /([A-Za-z]+)/g;
+                arr_en_word = english.match(ptn_english);
+                alert(arr_en_word);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <textarea id="text" class="form-control" rows="7">
+    사자는 lion 식육목 고양이과 표범속으로 nabi 분류되는 포유동물이다. korea 현존하는 고양잇과 동물 중에서 호랑이에 이어 두 번째로 큰 종이다. 
+    표현식(expression)을 일반 문자열(normal strings)에 삽입하기 위해서, 당신은 다음의 문법을 사용할 수 있을 것입니다.
+    </textarea>
+    <button id="btn_show" class="btn btn-default">영어 찾기</button>
+</body>
+
+</html>

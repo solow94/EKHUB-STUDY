@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let pre = ["apple", "orange", 100];
+        let newData = [...pre];
+        console.log(pre, newData);
+        console.log(pre === newData);
+
+        let op = [100, 200, "hello", null];
+        let sumArr = [0, 1, 2, 3, ...op,4];
+
+        let num = [100,200,300];
+        function sum(a,b,c){
+            return a+b+c;
+        }
+
+        console.log(sum.apply(null, num));
+        console.log(sum(...num));
+    </script>
+</body>
+</html>
