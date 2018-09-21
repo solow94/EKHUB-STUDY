@@ -3,6 +3,9 @@ class Blog {
         this.setInitVariables();
         this.registerEvents();
 
+        //화면 상태 변수
+        this.state = "create";
+
         //찜 목록 변수
         this.likedSet = new Set();
     }
@@ -18,17 +21,16 @@ class Blog {
         const dataURL = "./data/data.json";
 
         startBtn.addEventListener("click", () => {
+            // if (this.state === "stop")
             this.setInitData(dataURL);
         });
 
         this.blogList.addEventListener("click", ({ target }) => {
             const targetClassName = target.className;
-            console.log(target.className);
             //classname이 like라면 찜하기 목록을 추가한다.
 
-            const postTitle = target.previousElementSibling.textContent;
-
             if (targetClassName !== "like" && targetClassName !== "unlike") return;
+            const postTitle = target.previousElementSibling.textContent;
 
             //찜 취소를 클릭한 경우에, 찜하기로 다시 변경하고, 찜목록을 제거하고
             //찜 목록뷰를 렌더링한다.
@@ -64,7 +66,7 @@ class Blog {
         ul.innerHTML = likedSum;
     }
 
-    
+
     setInitData(dataURL) {
         //여기 this가 왜 undefined?
         this.getData(dataURL, this.insertPosts.bind(this));
@@ -73,7 +75,6 @@ class Blog {
 
     getData(dataURL, fn) {
         //데이터가 오면 callback받음
-        //
         const oReq = new XMLHttpRequest();
 
         oReq.addEventListener("load", () => {
@@ -86,15 +87,25 @@ class Blog {
     }
 
     insertPosts(list) {
-        list.forEach(v => {
-            // debugger;
-            this.blogList.innerHTML += `
-                <li> 
-                    <a href=${v.link}>${v.title}</a>
-                    <div class="like">찜하기</div>
-                </li>
-                `;
-        });
+        if (this.state === "create") {
+            list.forEach(v => {
+                // debugger;
+                this.blogList.innerHTML += `
+                        <li> 
+                            <a href=${v.link}>${v.title}</a>
+                            <div class="like">찜하기</div>
+                        </li>
+                        `;
+                this.state = "stop";
+            });
+        } else if (this.state === "stop") {
+            this.blogList.style = "display:none";
+            this.state = "open";
+        } else if (this.state === "open") {
+            this.blogList.style = "display:block";
+            this.state = "stop";
+        }
+
     }
 }
 
